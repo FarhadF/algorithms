@@ -1,0 +1,26 @@
+package main
+
+import (
+	"os"
+	"strconv"
+	"fmt"
+)
+
+func main() {
+	input := os.Args[1]
+	i, _ := strconv.Atoi(input)
+	fmt.Println(fibonacciIterative(i))
+}
+
+//Time complexity - O(n)
+//Space complexity - O(1)
+func fibonacciIterative(f int) int {
+	previousFib := 0
+	fib := 1
+	for i := 2; i <= f; i++ {
+		tmp := fib
+		fib += previousFib
+		previousFib = tmp
+	}
+	return fib
+}
