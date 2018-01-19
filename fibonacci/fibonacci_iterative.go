@@ -15,12 +15,16 @@ func main() {
 //Time complexity - O(n)
 //Space complexity - O(1)
 func fibonacciIterative(f int) int {
-	previousFib := 0
-	fib := 1
-	for i := 2; i <= f; i++ {
-		tmp := fib
-		fib += previousFib
-		previousFib = tmp
+	if f == 0 {
+		return 0
+	} else {
+		previousFib := 0
+		fib := 1
+		for i := 2; i <= f; i++ {
+			tmp := fib
+			fib += previousFib
+			previousFib = tmp
+		}
+		return fib
 	}
-	return fib
 }
