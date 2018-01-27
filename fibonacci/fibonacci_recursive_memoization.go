@@ -1,9 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"os"
 	"strconv"
-	"fmt"
 )
 
 func main() {
@@ -13,6 +13,7 @@ func main() {
 }
 
 var fibMap = make(map[int]int)
+
 //using memoization
 func fibonacciRecursiveMemo(f int) int {
 	if f == 0 {

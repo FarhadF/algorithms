@@ -3,13 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	slice := []int{1,2,3,4,5,6,7,8,9}
-	target := 1
+	slice := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	target := 9
 	result := binarySearch(slice, target)
-	fmt.Println("result:",result)
+	fmt.Println("result:", result)
 }
 
-func binarySearch(slice []int, target int) int{
+func binarySearch(slice []int, target int) int {
 	l := len(slice)
 	//fmt.Println("slice:", slice)
 	//fmt.Println("length", l)
@@ -29,4 +29,3 @@ func binarySearch(slice []int, target int) int{
 		}
 	}
 }
-

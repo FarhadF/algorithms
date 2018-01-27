@@ -1,8 +1,8 @@
 package main
 
 import (
-	"os"
 	"fmt"
+	"os"
 	"strconv"
 )
 
@@ -11,6 +11,7 @@ func main() {
 	i, _ := strconv.Atoi(input)
 	fmt.Println(fibonacciRecursive(i))
 }
+
 //Time complexity - O(2^n)
 //Space complexity - O(n)
 func fibonacciRecursive(i int) int {
