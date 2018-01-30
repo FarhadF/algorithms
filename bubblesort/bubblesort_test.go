@@ -7,9 +7,11 @@ func TestBubbleSort(t *testing.T) {
 	l := len(slice)
 	result := bubbleSort(slice, l)
 	for i := 0; i < l-1; i++ {
-		if result[i] > result[i+1] {
-			t.Error("expected ", result[i], " to be smaller than ", result[i+1])
-			break
+		for j := i + 1; j < l-1; j++ {
+			if result[i] > result[j] {
+				t.Error("expected ", result[i], " to be smaller than ", result[j])
+				break
+			}
 		}
 	}
 }
