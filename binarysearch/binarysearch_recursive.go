@@ -9,6 +9,9 @@ func main() {
 	fmt.Println("result:", result)
 }
 
+//time complexity: O(log(n))
+//space complexity: O(log(n))
+//if its tail recursive, it will be O(1) for space complexity
 func binarySearchRecursive(slice []int, target int) int {
 	l := len(slice)
 	//fmt.Println("slice:", slice)

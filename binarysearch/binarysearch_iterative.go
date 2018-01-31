@@ -8,7 +8,8 @@ func main() {
 	fmt.Println(binarySearchIterative(slice, target))
 }
 
-
+//time complexity: O(log(n))
+//space complexity: O(1)
 func binarySearchIterative(slice []int, target int) int {
 	low := 0
 	high := len(slice)

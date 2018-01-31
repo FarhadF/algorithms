@@ -17,4 +17,3 @@ func TestBinarySearchIterative(t *testing.T) {
 		t.Error("expecting -1 but got: ", result)
 	}
 }
-
