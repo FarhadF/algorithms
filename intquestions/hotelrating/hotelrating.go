@@ -10,6 +10,18 @@ type hotel struct {
 	rating int
 }
 
+/*sample input number of rows then each row hotel id and rating with space delimiter:
+	4
+	1000 8
+	2000 8
+	2000 10
+	1000 9
+sample output:
+	2000
+	1000
+*/
+
+
 func main() {
 	var n int
 	if m, err := fmt.Scan(&n); err != nil || m != 1 {
@@ -53,4 +65,8 @@ func main() {
 		}
 	})
 	fmt.Println(hotels)
+	for _, h:= range hotels {
+		fmt.Println(h.id)
+
+	}
 }
