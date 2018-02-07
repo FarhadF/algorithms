@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sort"
+	"time"
 )
 
 type hotel struct {
@@ -23,6 +24,7 @@ sample output:
 
 
 func main() {
+	start := time.Now()
 	var n int
 	if m, err := fmt.Scan(&n); err != nil || m != 1 {
 		fmt.Println(m)
@@ -55,7 +57,7 @@ func main() {
 	}
 	sort.Slice(hotels, func(i, j int) bool {
 		if hotels[i].rating == hotels[j].rating {
-			if hotels[i].id > hotels[i].id {
+			if hotels[i].id < hotels[j].id {
 				return false
 			} else {
 				return true
@@ -69,4 +71,5 @@ func main() {
 		fmt.Println(h.id)
 
 	}
+	fmt.Println(time.Since(start))
 }
