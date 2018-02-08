@@ -15,6 +15,18 @@ type hotel struct {
 	rating int
 }
 
+/*sample input number of rows then each row hotel id and rating with space delimiter if  hotels with the same rating we need to print the one with larger hotel id:
+	4
+	1000 8
+	2000 8
+	2000 10
+	1000 9
+sample output:
+	2000
+	1000
+*/
+
+
 func main() {
 	start := time.Now()
 	scanner := bufio.NewScanner(os.Stdin)
