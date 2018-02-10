@@ -2,11 +2,11 @@ package main
 
 import (
 	"bufio"
-	"os"
-	"strconv"
 	"fmt"
-	"strings"
+	"os"
 	"sort"
+	"strconv"
+	"strings"
 )
 
 type interval struct {
@@ -36,7 +36,7 @@ func main() {
 }
 
 //get intervals
-func getIntervals(n int, scanner *bufio.Scanner) []interval{
+func getIntervals(n int, scanner *bufio.Scanner) []interval {
 	intervals := make([]interval, 0)
 	for i := 0; i < n; i++ {
 		scanner.Scan()
@@ -54,8 +54,8 @@ func merge(intervals []interval) []interval {
 	var merged []interval
 	for i, v := range intervals {
 		//fmt.Println("i",i)
-		if i== 0 {
-			merged = append(merged,v)
+		if i == 0 {
+			merged = append(merged, v)
 		} else if i != len(intervals) {
 			if v.start <= merged[len(merged)-1].end {
 				//fmt.Println("possible merge")
