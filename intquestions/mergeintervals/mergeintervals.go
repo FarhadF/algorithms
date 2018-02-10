@@ -21,7 +21,22 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	//fmt.Println(n)
+	intervals := getIntervals(n, scanner)
+	//sort on start ascending
+	sort.Slice(intervals, func(i, j int) bool {
+		if intervals[i].start < intervals[j].start {
+			return true
+		} else {
+			return false
+		}
+	})
+	fmt.Println(intervals)
+	merged := merge(intervals)
+	fmt.Println(merged)
+}
+
+//get intervals
+func getIntervals(n int, scanner *bufio.Scanner) []interval{
 	intervals := make([]interval, 0)
 	for i := 0; i < n; i++ {
 		scanner.Scan()
@@ -32,24 +47,17 @@ func main() {
 		interval.start, interval.end = start, end
 		intervals = append(intervals, interval)
 	}
-	//fmt.Println(intervals)
-	sort.Slice(intervals, func(i, j int) bool {
-		if intervals[i].start < intervals[j].start {
-			return true
-		} else {
-			return false
-		}
-	})
-	fmt.Println(intervals)
-	//fmt.Println(len(intervals))
+	return intervals
+}
+
+func merge(intervals []interval) []interval {
 	var merged []interval
-	//var index int = 0
 	for i, v := range intervals {
 		//fmt.Println("i",i)
 		if i== 0 {
 			merged = append(merged,v)
 		} else if i != len(intervals) {
-    		if v.start <= merged[len(merged)-1].end {
+			if v.start <= merged[len(merged)-1].end {
 				//fmt.Println("possible merge")
 				merged[len(merged)-1].end = v.end
 				//			index ++
@@ -58,5 +66,5 @@ func main() {
 			}
 		}
 	}
-	fmt.Println(merged)
+	return merged
 }
