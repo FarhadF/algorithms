@@ -14,6 +14,9 @@ type interval struct {
 	end   int
 }
 
+//first input will be an integer with number of intervals
+//next inputs will be intervals consisting of 2 integers seperated by space
+
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
