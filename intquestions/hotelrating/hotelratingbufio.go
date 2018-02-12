@@ -2,16 +2,16 @@ package main
 
 import (
 	"bufio"
-	"os"
 	"fmt"
-	"strconv"
-	"time"
-	"strings"
+	"os"
 	"sort"
+	"strconv"
+	"strings"
+	"time"
 )
 
 type hotel struct {
-	id int
+	id     int
 	rating int
 }
 
@@ -26,7 +26,6 @@ sample output:
 	1000
 */
 
-
 func main() {
 	start := time.Now()
 	scanner := bufio.NewScanner(os.Stdin)
@@ -36,9 +35,9 @@ func main() {
 		panic(err)
 	}
 	hotelsMap := make(map[int]int)
-	for i:=0; i<n; i++ {
+	for i := 0; i < n; i++ {
 		scanner.Scan()
-		hotelRating := strings.Split(scanner.Text()," ")
+		hotelRating := strings.Split(scanner.Text(), " ")
 		var hotelRatingInt []int
 		for _, v := range hotelRating {
 			temp, _ := strconv.Atoi(v)
@@ -53,11 +52,11 @@ func main() {
 	i := 0
 	hotelsRatingSlice := make([]hotel, len(hotelsMap))
 	fmt.Println(hotelsMap)
-	for k,v := range hotelsMap{
+	for k, v := range hotelsMap {
 		hotelsRatingSlice[i] = hotel{k, v}
 		i++
 	}
-	sort.Slice(hotelsRatingSlice, func(i,j int) bool {
+	sort.Slice(hotelsRatingSlice, func(i, j int) bool {
 		if hotelsRatingSlice[i].rating == hotelsRatingSlice[j].rating {
 			if hotelsRatingSlice[i].id < hotelsRatingSlice[j].id {
 				return false

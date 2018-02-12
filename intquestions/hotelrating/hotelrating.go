@@ -22,7 +22,6 @@ sample output:
 	1000
 */
 
-
 func main() {
 	start := time.Now()
 	var n int
@@ -67,7 +66,7 @@ func main() {
 		}
 	})
 	fmt.Println(hotels)
-	for _, h:= range hotels {
+	for _, h := range hotels {
 		fmt.Println(h.id)
 
 	}

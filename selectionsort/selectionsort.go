@@ -7,6 +7,7 @@ func main() {
 	length := len(slice)
 	fmt.Println(selectionSort(slice, length))
 }
+
 //time complexity: O(n^2)
 func selectionSort(slice []int, length int) []int {
 	var min int
