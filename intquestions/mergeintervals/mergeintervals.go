@@ -14,6 +14,9 @@ type interval struct {
 	end   int
 }
 
+//first input will be an integer with number of intervals
+//next inputs will be intervals consisting of 2 integers seperated by space
+
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
@@ -50,17 +53,15 @@ func getIntervals(n int, scanner *bufio.Scanner) []interval {
 	return intervals
 }
 
+//merge intervals
 func merge(intervals []interval) []interval {
 	var merged []interval
 	for i, v := range intervals {
-		//fmt.Println("i",i)
 		if i == 0 {
 			merged = append(merged, v)
 		} else if i != len(intervals) {
 			if v.start <= merged[len(merged)-1].end {
-				//fmt.Println("possible merge")
 				merged[len(merged)-1].end = v.end
-				//			index ++
 			} else {
 				merged = append(merged, v)
 			}
